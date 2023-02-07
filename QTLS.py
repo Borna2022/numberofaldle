@@ -113,9 +113,22 @@ print("Sequence #3:", c)
 print("Sequence #4:", d)
 print("Sequence #5:", f)
 
-#اضافه کردن زمان تخلیه به نمودار
-xstart=[]
-ystart=[]
+####################
+xstend=[]
+for i in range(stt,1440):   
+    if i % (stt)==0:
+        xstend.append(i-stt)
+        xstend.append(i-preptime)
+print(xstend)
+ystend=[]
+
+for i in range (len(xstend)):
+    ystend.append(150)
+c=1
+for i in starteaf:
+    plt.annotate(f"{c}",xy=(i,150),size=10)
+    c+=1
+plt.plot(xstend, ystend,marker="|")
 
 
 #اضافه نمودن سکوینس اول
@@ -175,4 +188,5 @@ for i in range(0,numberofsequence):
     plt.annotate(f'{textd[i]}', xy=(xd[i], 100),size=7)
 
 print("text d",textd)
+
 plt.show()
